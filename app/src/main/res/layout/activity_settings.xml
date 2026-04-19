@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── APARIENCIA ──────────────────────────────────── -->
+        <TextView style="@style/SectionHeader" android:text="🎨  Apariencia" />
+
+        <TextView style="@style/SettingsLabel" android:text="Tema" />
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbDark"   android:text="Oscuro"  style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbLight"  android:text="Claro"   style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbAmoled" android:text="AMOLED"  style="@style/RadioOpt" />
+        </RadioGroup>
+
+        <TextView style="@style/SettingsLabel" android:text="Color de acento" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+            <View android:id="@+id/accentPreview"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_marginEnd="12dp" />
+            <Button android:id="@+id/btnPickColor"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Elegir color"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
+
+        <View style="@style/Divider" />
+
+        <!-- ── LAYOUT ─────────────────────────────────────── -->
+        <TextView style="@style/SectionHeader" android:text="📐  Layout" />
+
+        <TextView style="@style/SettingsLabel" android:text="Tipo de vista" />
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbList" android:text="Lista"  style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbGrid" android:text="Cuadrícula" style="@style/RadioOpt" />
+        </RadioGroup>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+            <TextView style="@style/SettingsLabel"
+                android:text="Columnas (grid): "
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp" />
+            <TextView android:id="@+id/tvColumnsVal"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimary" android:textStyle="bold"
+                android:textSize="16sp" android:text="4" />
+        </LinearLayout>
+        <SeekBar android:id="@+id/sbColumns"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="3" android:layout_marginTop="4dp" android:layout_marginBottom="8dp"/>
+
+        <View style="@style/Divider" />
+
+        <!-- ── TAMAÑOS ────────────────────────────────────── -->
+        <TextView style="@style/SectionHeader" android:text="🔍  Tamaños" />
+
+        <TextView style="@style/SettingsLabel" android:text="Tamaño de iconos" />
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbIconSm" android:text="Pequeño" style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbIconMd" android:text="Mediano"  style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbIconLg" android:text="Grande"   style="@style/RadioOpt" />
+        </RadioGroup>
+
+        <TextView style="@style/SettingsLabel" android:text="Tamaño de texto" />
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbFontSm" android:text="Pequeño" style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbFontMd" android:text="Mediano"  style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbFontLg" android:text="Grande"   style="@style/RadioOpt" />
+        </RadioGroup>
+
+        <TextView style="@style/SettingsLabel" android:text="Espaciado entre apps" />
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbPadCompact"  android:text="Compacto"  style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbPadNormal"   android:text="Normal"    style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbPadSpacious" android:text="Espacioso" style="@style/RadioOpt" />
+        </RadioGroup>
+
+        <View style="@style/Divider" />
+
+        <!-- ── VISUALIZACIÓN ──────────────────────────────── -->
+        <TextView style="@style/SectionHeader" android:text="👁  Visualización" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Mostrar nombres"
+                android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
+            <Switch android:id="@+id/swShowNames"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+            android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Barra de búsqueda"
+                android:textColor="?attr/colorOnSurface" android:textSize="15sp" />
+            <Switch android:id="@+id/swSearchBar"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View style="@style/Divider" />
+
+        <!-- ── ORDENAMIENTO ───────────────────────────────── -->
+        <TextView style="@style/SectionHeader" android:text="🔃  Ordenamiento" />
+
+        <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbSortAlpha"  android:text="Alfabético"  style="@style/RadioOpt" />
+            <RadioButton android:id="@+id/rbSortRecent" android:text="Recientes"   style="@style/RadioOpt" />
+        </RadioGroup>
+
+        <View style="@style/Divider" />
+
+        <!-- ── APPS OCULTAS ───────────────────────────────── -->
+        <TextView style="@style/SectionHeader" android:text="🙈  Apps ocultas" />
+
+        <Button
+            android:id="@+id/btnManageHidden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gestionar apps ocultas"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginTop="4dp" />
+
+        <View android:layout_width="match_parent" android:layout_height="32dp" />
+
+    </LinearLayout>
+</ScrollView>
